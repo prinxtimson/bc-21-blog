@@ -18,19 +18,11 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.html">Bugie Blog</h1></a>
             </div>
-           <form class="navbar-form navbar-center">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
-            </form>
         </nav>
         </head>
         <div class="container well">
         <h1 class="head1">What's on your mind</h1>
-        <form class="form-horizontal" name="publishPost" onsubmit="return validateInput()">
+        <form class="form-horizontal" name="publishPost" onsubmit="return validateInput()" onsubmit="redirect()">
             <div class="form-group">
                 <label class="glyphicon glyphicon-user control-label col-sm-2" for="name"> Author:</label>
                 <div class="col-sm-8">
