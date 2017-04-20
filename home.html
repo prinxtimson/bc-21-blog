@@ -7,6 +7,7 @@
         <title>BugieBlog</title>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src='bootstrap/js/main.js'></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -23,14 +24,18 @@
                 </button>
             </form>
             <div class="nav navbar-nav navbar-right">
-            <button class="glyphicon glyphicon-edit btn navbar-btn" type="button">Create</button>
+            <a href="formpage.html">
+            <button href="formpage.html" class="glyphicon glyphicon-edit btn navbar-btn" type="button">Create</button>
+            </a>
             </div>
         </div>
         </nav>
         <div class="container">
         <div class="row">
-            <div class="col-sm-9">
-                <button class="btn btn-success btn-lg" type="button">Create a Blog Post</button>
+            <div class="col-sm-9 well">
+                <a href="formpage.html">
+                <button class="btn btn-success btn-lg" type="button" onclick="windows.location.href.html">Create a Blog Post</button>
+                </a>
             </div>
              <div class="col-sm-3 well">
                 <h4>Feature Blog Post</h4>

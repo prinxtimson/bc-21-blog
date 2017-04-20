@@ -7,12 +7,13 @@
         <title>BugieBlog</title>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src='bootstrap/js/main.js'></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-            <a class="navbar-brand" href="">Bugie Blog</h1></a>
+            <a class="navbar-brand" href="home.html">Bugie Blog</h1></a>
             </div>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -23,7 +24,9 @@
                 </button>
             </form>
             <div class="nav navbar-nav navbar-right">
+            <a href="formpage.html">
             <button class="glyphicon glyphicon-edit btn navbar-btn" type="button">Create</button>
+            </a>
             </div>
         </div>
         </nav>
@@ -32,13 +35,18 @@
             <div class="col-sm-9 well">
                 
             </div>
-             <div class="col-sm-3 well" id="blogPost">
+             <div class="col-sm-3 well" id="blogBox" onload="listPost()">
                 <h4>Feature Blog Post</h4>
+                <h3 id="myPost">
+
+                </h3>
             </div>
+            
         </div>
         </div>
-    <div data-role="footer">
+        <div data-role="footer">
            <h5 style="text-align:center">Copywrite: &copy bootcamp 21 Blog project</h5>
         </div>
+       
     </body>
 </html>
