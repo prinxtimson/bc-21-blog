@@ -1,3 +1,6 @@
+function redirect(){
+    window.location="viewpost.html";
+}
 function validateInput(){
     let item = document.publishPost;
 
@@ -29,8 +32,27 @@ function validateInput(){
             myJSON = JSON.stringify(info);
             localStorage.setItem("testJSON", myJSON);
         }
+        redirect();
     }
 }
+
+function listPost(){
+    if(localStorage.getItem("testJSON") === null){
+        document.write ("No available post yet....");
+    }else{
+        var text =localStorage.getItem("testJSON");
+        var info = JSON.parse(text);
+        var output = '';
+        for(var i = 0; i<=info.blogPost.length; i++){
+            output += '<p>' + info.blogPost[i].name + '<br>' + info.blogPost.title
+                    + '<br>' + info.blogPost.post + '</p>';
+        
+            }
+        var update = document.getElementById('myPost');
+        update.innerHTML = output
+    } 
+}
+
 
 
 
