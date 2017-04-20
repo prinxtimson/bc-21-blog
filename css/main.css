@@ -1,0 +1,30 @@
+#logo{
+    float: left;
+}
+
+#createbtn{
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+#nav{
+    background-color: blue;
+    width: auto;
+    padding: 25px;
+}
+
+#blogpost{
+    float: left;
+}
+
+#action{
+    float: right;
+}
+
+#frame{
+    width: 1000px;
+    margin: 0 auto;
+}

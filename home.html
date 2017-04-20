@@ -5,38 +5,35 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewpoint" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>BugieBlog</title>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <script type="text/javascript" src='bootstrap/js/main.js'></script>
+        <link href="css/main.css" rel="stylesheet">
+        <script type="text/javascript" src='js/main.js'></script>
     </head>
     <body onload="listPost()">
-        <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-            <a class="navbar-brand" href="">Bugie Blog</h1></a>
-            </div>
-            <div class="nav navbar-nav navbar-right">
-            <a href="formpage.html">
-            <button href="formpage.html" class="glyphicon glyphicon-edit btn navbar-btn" type="button">Create</button>
-            </a>
-            </div>
-        </div>
-        </nav>
-        <div class="container">
-        <div class="row">
-            <div id="view">
-
-            </div>
-            <div class="col-sm-9">
-                <div class="panel-body" id="myPost"></div>
-            </div>
-             <div class="col-sm-3 panel panel-default">
-                <div class="panel-heading"><h3>Action</h3></div>
-                <a href="formpage.html">
-                <button class="btn btn-success" type="button" onclick="windows.location.href.html">Create</button>
-                </a>
+        <div>
+            <div id="nav">
+                <div id="logo">
+                    <a href="home.html">Bugie Blog</a></li>
                 </div>
-        </div>
+                <div id="createbtn">
+                    <a href="formpage.html">
+                    <button href="formpage.html" class="glyphicon glyphicon-edit btn navbar-btn" type="button">Create</button>
+                    </a>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="frame">
+                <div id="blogpost">
+                    <div>Post</div>
+                    <div id="myPost"></div>
+                </div>
+                <div id="action">
+                    <div class="panel-heading"><h3>Action</h3></div>
+                    <a href="formpage.html">
+                    <button class="btn btn-success" type="button" onclick="windows.location.href.html">Create</button>
+                    </a>
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
         <div data-role="footer">
            <h5 style="text-align:center">Copywrite: &copy bootcamp 21 Blog project</h5>
