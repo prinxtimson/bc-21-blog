@@ -2,6 +2,11 @@
     float: left;
 }
 
+#pageframe{
+    background-color: gray;
+    border-radius: 5px;
+}
+
 #createbtn{
     float: right;
 }
@@ -11,20 +16,78 @@
 }
 
 #nav{
-    background-color: blue;
+    background-color: #1a1a1a;
     width: auto;
-    padding: 25px;
+    padding: 30px;
+    border-radius: 5px;
 }
 
 #blogpost{
     float: left;
+    margin: 5px;
+    width: 970px;
+}
+
+#myPost{
+    width: 300px;
+    text-align: center;
 }
 
 #action{
     float: right;
+    width: 0px;
 }
 
 #frame{
     width: 1000px;
-    margin: 0 auto;
+    max-height: 10px;
+    margin-left: 15px;
+    margin-right: 40px;
+}
+
+form{
+    width: 60%;
+}
+
+textarea, input{
+    width: 60%;
+    border-radius: 3px;
+}
+
+#formholder{
+    width: inherit;
+}
+
+.form-group{
+
+}
+
+button{
+    border-radius: 5px;
+    border: 0.23px;
+    background-color: green;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#articles{
+    margin: 10px;
+    width: 900px;
+    background-color: springgreen;
+    border-radius: 10px;  
+    display: inline-block;
+}
+
+#myPost{
+    overflow: scroll;
+    min-height: 500px;
+    max-height: 500px;
+    padding-right: 650px;
+    background-color: lightgray;
+}
+
+#icon{
+    float: right;
 }

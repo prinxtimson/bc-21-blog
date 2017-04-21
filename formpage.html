@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 
 <html class="html" lang="en">
-    <div data-role="popup" id="myPost" class="ui-content" style="min-width:500px;">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewpoint" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>BugieBlog</title>
         <link href="css/main.css" rel="stylesheet">
-        <script type="text/javascript" src='bootstrap/js/main.js'></script>
+        <script type="text/javascript" src='js/main.js'></script>
     </head>
     
     <body>
-        <head>
-        <nav class="navbar navbar-inverse">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.html">Bugie Blog</h1></a>
-            </div>
-        </nav>
-        </head>
-        <div class="container well">
-        <h1 class="head1">What's on your mind</h1>
-        <form class="form-horizontal" name="publishPost" onsubmit="return validateInput()" onsubmit="redirect()">
-            <div class="form-group">
-                <label class="glyphicon glyphicon-user control-label col-sm-2" for="name"> Author:</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        <div>
+        <div id="nav">
+                <div id="logo">
+                    <a href="home.html">Bugie Blog</a></li>
+                </div>
+                <div id="createbtn">
+                    <a href="formpage.html">
+                    <button href="formpage.html" type="button">Create</button>
+                    </a>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="glyphicon glyphicon-edit control-label col-sm-2" for="title"> Title:</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="title" placeholder="Title">
+            <div class="clear"></div>
+        <div id="form">
+            <h1 class="head1">What's on your mind</h1>
+            <div id="formholder">
+                <form name="publishPost" onsubmit="return validateInput()">
+                <div class="form-group">
+                        <div><label for="name"> Author:</label></div>
+                        <div><input type="text" class="form-control" id="name" placeholder="Enter your name"></div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="glyphicon glyphicon-edit control-label col-sm-2" for="post">  Post:</label>
-                <div class="col-sm-8">
-                    <textarea class="form-control" class="widgEditor" id="post" rows="10" placeholder="Write here"></textarea>
+                <div class="clear"></div><br>
+                <div class="form-group">
+                        <div><label for="title"> Title:</label></div>
+                        <div><input type="text" class="form-control" id="title" placeholder="Title"></div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-9">
-                    <button type='submit' class='btn btn-default'>publish</button>
+                <div class="clear"></div><br>
+                <div class="form-group">
+                        <div><label for="post"> Post:  </label></div>
+                        <div><textarea id="post" rows="10" placeholder="Write here"></textarea></div>
+                </div>
+                <div class="clear"></div><br>
+                <div class="form-group">
+                    <button type='submit'>publish</button>
                 </div>
             </div>
         </form>
         </div>
+        </div>
+        </div>
     </body>
-    </div>
 </html>
