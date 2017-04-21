@@ -1,5 +1,5 @@
 function redirect(){
-    window.location="viewpost.html";
+    window.location="formpage.html";
 }
 
 //To get the current time and date
@@ -45,18 +45,19 @@ function validateInput(){
             myJSON = JSON.stringify(info);
             localStorage.setItem("testJSON", myJSON);
         }
-        window.location.href = "home.html";
+        //window.location="home.html";
     }
 }
 
 //This is to output the post in the local storage to user
 function listPost(){
-    if(localStorage.getItem("testJSON") === null){
-        document.write ("No available post yet....");
+    var text =localStorage.getItem("testJSON");
+    var info = JSON.parse(text);
+    var output = '';
+    var update = document.getElementById('blogbody');
+    if(info.blogPost.length === 0){
+        update.innerHTML = '<h3>No Blog post yet, click on the <a href="formpage.html">create</a> to publish your first post.......</h3>';
     }else{
-        var text =localStorage.getItem("testJSON");
-        var info = JSON.parse(text);
-        var output = '';
         for(var i = 0; i<info.blogPost.length; i++){  
             output += '<div id="articles">'+
                         '<div>'+
@@ -72,9 +73,11 @@ function listPost(){
                         '<div id="icon">'+
                             '<button type="button" onclick="deletePost('+ i + ')"><i class="fa fa-trash"></i>'+
                         '</div>'+
+                        '<div id="icon">'+
+                            '<button type="button" onclick="editPost('+ i + '), redirect()"><i class="fa fa-edit"></i>'+
+                        '</div>'+
                     '</div>';
             }
-        var update = document.getElementById('blogbody');
         update.innerHTML = output
     } 
 }
@@ -91,9 +94,10 @@ function getConfirmation(){
 
 //This is to delete selected post by the user.
 function deletePost(indexNum){
+    console.log(indexNum)
     if(getConfirmation() == true){
         let info = JSON.parse(localStorage.getItem("testJSON"));
-        info.blogPost.splice(indexNum,indexNum);
+        info.blogPost.splice(indexNum,(indexNum+1));
         let myJSON = JSON.stringify(info);
         localStorage.setItem("testJSON", myJSON);
     } 
@@ -102,11 +106,9 @@ function deletePost(indexNum){
 
 //To edit user's existing post..
 function editPost(indexNum){
-    window.location = "formpage.html";
     let info = JSON.parse(localStorage.getItem("testJSON"));
-    let item = document.publishPost;
-    item.name.value = info.blogPost[indexNum].name;
-    item.title.value = info.blogPost[indexNum].title;
-    item.post.value = info.blogPost[indexNum].post;
+    document.getElementById('name').value = info.blogPost[indexNum].name;
+    document.getElementById('title').value = info.blogPost[indexNum].title;
+    idocument.getElementById('post').value = info.blogPost[indexNum].post;
 }
 
