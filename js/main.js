@@ -2,12 +2,15 @@ function redirect(){
     window.location="viewpost.html";
 }
 
+//To get the current time and date
 function timeDate(){
     var currentTime = new Date();
     return  (currentTime.getDate() + '-' + currentTime.getMonth()+1 + '-' +
             currentTime.getFullYear() + ' @ ' + currentTime.getHours() + ':' +
             currentTime.getMinutes() + ':' + currentTime.getSeconds());
 }
+
+//This is to validate and store user's input
 function validateInput(){
     let item = document.publishPost;
 
@@ -42,9 +45,11 @@ function validateInput(){
             myJSON = JSON.stringify(info);
             localStorage.setItem("testJSON", myJSON);
         }
+        window.location.href = "home.html";
     }
 }
 
+//This is to output the post in the local storage to user
 function listPost(){
     if(localStorage.getItem("testJSON") === null){
         document.write ("No available post yet....");
@@ -52,7 +57,7 @@ function listPost(){
         var text =localStorage.getItem("testJSON");
         var info = JSON.parse(text);
         var output = '';
-        for(var i = 0; i<info.blogPost.length; i++){
+        for(var i = 0; i<info.blogPost.length; i++){  
             output += '<div id="articles">'+
                         '<div>'+
                             '<article>'+
@@ -65,20 +70,43 @@ function listPost(){
                             '</article>'+
                         '</div>'+
                         '<div id="icon">'+
-                            '<button type="button" onclick="deletePost('+ i + ')"><i class="fa fa-trash"></i></a>'+
+                            '<button type="button" onclick="deletePost('+ i + ')"><i class="fa fa-trash"></i>'+
                         '</div>'+
                     '</div>';
             }
-        var update = document.getElementById('myPost');
+        var update = document.getElementById('blogbody');
         update.innerHTML = output
     } 
 }
 
+//For delete confirmation.
+function getConfirmation(){
+    let getConf = confirm("Are you sure you want to delete this post ?");
+    if( getConf == true ){
+        return true;
+    }else{
+        return false;
+    }
+}
 
+//This is to delete selected post by the user.
 function deletePost(indexNum){
+    if(getConfirmation() == true){
+        let info = JSON.parse(localStorage.getItem("testJSON"));
+        info.blogPost.splice(indexNum,indexNum);
+        let myJSON = JSON.stringify(info);
+        localStorage.setItem("testJSON", myJSON);
+    } 
+    window.location.reload();
+}
+
+//To edit user's existing post..
+function editPost(indexNum){
+    window.location = "formpage.html";
     let info = JSON.parse(localStorage.getItem("testJSON"));
-    info.blogPost.splice(indexNum,indexNum);
-    let myJSON = JSON.stringify(info);
-    localStorage.setItem("testJSON", myJSON);
+    let item = document.publishPost;
+    item.name.value = info.blogPost[indexNum].name;
+    item.title.value = info.blogPost[indexNum].title;
+    item.post.value = info.blogPost[indexNum].post;
 }
 
