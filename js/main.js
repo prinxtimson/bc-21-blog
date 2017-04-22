@@ -61,9 +61,9 @@ function getPost(){
     var update = document.getElementById('blogbody');
 
     if(info.blogPost.length === 0){
-        update.innerHTML = '<h3>No Blog post yet, click on the <a href="formpage.html">create</a> to publish your first post.......</h3>';
+        update.innerHTML = '<h3>No Blog post yet, click on <a href="formpage.html">create</a> to publish your first post.......</h3>';
     }else{
-        for(var i = 0; i<info.blogPost.length; i++){  
+        for(var i = info.blogPost.length-1; i>=0; i--){  
             output += '<div id="articles">'+
                         '<div>'+
                             '<article>'+
