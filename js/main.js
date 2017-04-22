@@ -126,9 +126,9 @@ function editPost(indexNum){
 function fillText(obj){
     redirect();
 
-    document. getElementById('name').value = obj[name];
+    document.getElementById('name').value = obj[name];
     document.getElementById('title').value = obj[title];
-    idocument.getElementById('post').value = obj[post];
+    document.getElementById('post').value = obj[post];
 }
 
 //output notice for the unavailable pages.
