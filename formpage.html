@@ -4,44 +4,51 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>BugieBlog</title>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1">
+        <title>BlogIt</title>
         <link href="css/main.css" rel="stylesheet">
         <script type="text/javascript" src='js/main.js'></script>
     </head>
     
     <body>
-        <div>
-        <div id="nav">
-                <div class="nav">
-                <div id="logo">
-                    <a href="home.html"><h3>Home</h3></a>
-                </div>
-                <div id="createbtn">
-                    <a href="formpage.html">
-                    <button href="formpage.html" type="button"><i class="fa fa-edit"></i></button>
-                    </a>
-                </div>
-                <div class="clear"></div>
+      <div class="header-wrapper">
+            <div class="site-name">
+                <h1 style="text-align:center">BlogIt!</h1>
+                <h3 style="text-align:center">where your imagination come to life......</h3>
+            </div>
+        </div>
+        <div class="menu">
+        <div class="navbar">
+            <div class="containe">
+                <div class="col-2">
+                    <ul class="list">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#" onclick="notice()">About</a></li>
+                        <li><a href="#" onclick="notice()">Services</a></li>
+                        <li><a href="#" onclick="notice()">Contact</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="clear"></div>
             <div class="clear"></div>
         <div id="form">
             <h1 class="head1">What's on your mind</h1>
             <div id="formholder">
-                <form name="publishPost" onsubmit="return validateInput()" action="home.html">
+                <form name="publishPost" onsubmit="return postBlog()" action="home.html">
                 <div class="form-group">
-                        <div><label for="name"> Author:</label></div>
+                        <div><label for="name"><h3> Author:</h3></label></div>
                         <div><input type="text" class="form-control" id="name" placeholder="Enter your name"></div>
                 </div>
                 <div class="clear"></div><br>
                 <div class="form-group">
-                        <div><label for="title"> Title:</label></div>
+                        <div><label for="title"><h3> Title:</h3></label></div>
                         <div><input type="text" class="form-control" id="title" placeholder="Title"></div>
                 </div>
                 <div class="clear"></div><br>
                 <div class="form-group">
-                        <div><label for="post"> Post:  </label></div>
+                        <div><label for="post"> <h3>Post:</h3>  </label></div>
                         <div><textarea id="post" rows="10" placeholder="Write here"></textarea></div>
                 </div>
                 <div class="clear"></div><br>
@@ -53,5 +60,9 @@
         </div>
         </div>
         </div>
+        <div class="clear"></div>
+            <div id="footer" data-role="footer">
+                <h5 style="text-align:center">Copywrite: &copy bootcamp 21 Blog project</h5>
+            </div>
     </body>
 </html>

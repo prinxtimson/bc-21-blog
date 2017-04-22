@@ -3,47 +3,69 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>BugieBlog</title>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>BlogIt</title>
         <link href="css/main.css" rel="stylesheet">
         <script type="text/javascript" src='js/main.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body onload="listPost()">
-        <div id="pageframe">
-            <div id="nav">
-                <div class="nav">
-                <div id="logo">
-                    <a href="home.html"><h3>Home</h3></a>
-                </div>
-                <div id="createbtn">
-                    <a href="formpage.html">
-                    <button href="formpage.html" type="button"><i class="fa fa-edit"></i></button>
-                    </a>
-                </div>
-                <div class="clear"></div>
-                </div>
-            </div>
-            <div class="clear"></div>
-            <div class="body">
-            <div id="frame">
-                <div id="blogpost">
-                    <h2>Post</h2>
-                    <div id="blogbody"></div>
-                </div>
-                <div id="action">
-                    <div class="panel-heading"><h3>Action</h3></div><hr>
-                    <a href="formpage.html">
-                    <button type="button" >Create</button>
-                    </a>
-                </div>
-                <div class="clear"></div>
+
+    <body onload="getPost()">
+        <div class="header-wrapper">
+            <div class="site-name">
+                <h1 style="text-align:center">BlogIt!</h1>
+                <h3 style="text-align:center">where your imagination come to life......</h3>
             </div>
         </div>
-        <div class="clear"></div>
+        <div class="menu">
+        <div class="navbar">
+            <div class="container">
+                <div class="col-1">
+                   <a href="formpage.html">
+                        <button href="formpage.html" type="button"><i class="fa fa-edit"></i></button>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <ul class="list">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#" onclick="notice()">About</a></li>
+                        <li><a href="#" onclick="notice()">Services</a></li>
+                        <li><a href="#" onclick="notice()">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div data-role="footer">
-           <h5 style="text-align:center">Copywrite: &copy bootcamp 21 Blog project</h5>
+    </div>
+    <div class="clear"></div>
+    <img src="image/myimage.jpg" width="100%" height="270px" alt="Page image">
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class=" col-2">
+                <section class="section">
+                    <div class="inner1">
+                        <h2 class="heading">Blog Post</h2>
+                        <div class="content">
+                            <p id="blogbody"></p>
+                        </div>
+                    </div>                 
+                </section>
+            </div>
+            <div class=" col-1">
+                <div class="inner">
+                    <h2 class="heading" style="text-align:left">Action</h2>
+                    <div class="content">
+                        <a href="formpage.html">
+                            <button type="button" >Create</button>
+                        </a>
+                    </div>  
+                 </div>               
+            </div>  
         </div>
-    </body>
+        
+    </div>
+    <div class="clear"></div>
+    <div id="footer" data-role="footer">
+        <h5 style="text-align:center">Copywrite: &copy bootcamp 21 Blog project</h5>
+    </div>
+</body>
 </html>

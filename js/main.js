@@ -1,4 +1,6 @@
-function redirect(){
+
+//this function redirect to formpage
+function redirect(){ 
     window.location="formpage.html";
 }
 
@@ -11,7 +13,8 @@ function timeDate(){
 }
 
 //This is to validate and store user's input
-function validateInput(){
+function postBlog(){
+
     let item = document.publishPost;
 
 	if(item.name.value == ''){
@@ -45,16 +48,18 @@ function validateInput(){
             myJSON = JSON.stringify(info);
             localStorage.setItem("testJSON", myJSON);
         }
-        //window.location="home.html";
     }
 }
+        
 
 //This is to output the post in the local storage to user
-function listPost(){
+function getPost(){
+
     var text =localStorage.getItem("testJSON");
     var info = JSON.parse(text);
     var output = '';
     var update = document.getElementById('blogbody');
+
     if(info.blogPost.length === 0){
         update.innerHTML = '<h3>No Blog post yet, click on the <a href="formpage.html">create</a> to publish your first post.......</h3>';
     }else{
@@ -71,10 +76,10 @@ function listPost(){
                             '</article>'+
                         '</div>'+
                         '<div id="icon">'+
-                            '<button type="button" onclick="deletePost('+ i + ')"><i class="fa fa-trash"></i>'+
+                            '<i class="fa fa-trash" onclick="deletePost('+ i + ')"></i>'+
                         '</div>'+
                         '<div id="icon">'+
-                            '<button type="button" onclick="editPost('+ i + '), redirect()"><i class="fa fa-edit"></i>'+
+                            '<i class="fa fa-edit" onclick="editPost('+ i + ')"></i>'+
                         '</div>'+
                     '</div>';
             }
@@ -84,6 +89,7 @@ function listPost(){
 
 //For delete confirmation.
 function getConfirmation(){
+
     let getConf = confirm("Are you sure you want to delete this post ?");
     if( getConf == true ){
         return true;
@@ -94,6 +100,7 @@ function getConfirmation(){
 
 //This is to delete selected post by the user.
 function deletePost(indexNum){
+
     console.log(indexNum)
     if(getConfirmation() == true){
         let info = JSON.parse(localStorage.getItem("testJSON"));
@@ -106,9 +113,16 @@ function deletePost(indexNum){
 
 //To edit user's existing post..
 function editPost(indexNum){
+    window.location = "formpage.html";
     let info = JSON.parse(localStorage.getItem("testJSON"));
-    document.getElementById('name').value = info.blogPost[indexNum].name;
-    document.getElementById('title').value = info.blogPost[indexNum].title;
-    idocument.getElementById('post').value = info.blogPost[indexNum].post;
+    let x = document. getElementById('name'); URLSearchParams
+    x.innerText = (info.blogPost[indexNum].name);
+    document.getElementById('title').innerText= (info.blogPost[indexNum].title);
+    idocument.getElementById('post').innerText = (info.blogPost[indexNum].post);
+}
+
+
+function notice(){
+    document.write('This page is still under contruction, kindly click on <a href="home.html">home</a> to go back to previous page..');
 }
 
