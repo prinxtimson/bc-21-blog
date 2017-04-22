@@ -7,6 +7,7 @@ function redirect(){
 //To get the current time and date
 function timeDate(){
     var currentTime = new Date();
+
     return  (currentTime.getDate() + '-' + currentTime.getMonth()+1 + '-' +
             currentTime.getFullYear() + ' @ ' + currentTime.getHours() + ':' +
             currentTime.getMinutes() + ':' + currentTime.getSeconds());
@@ -31,6 +32,7 @@ function postBlog(){
 		return false;
 	}else{
         var getTime = timeDate();
+
         if(localStorage.getItem("testJSON") == null){
             var myItem = {"blogPost":[{"name":item.name.value, 
                                     "title":item.title.value,
@@ -41,6 +43,7 @@ function postBlog(){
         }else{
             var text =localStorage.getItem("testJSON");
             var info = JSON.parse(text);
+
             info.blogPost.push({"name":item.name.value, 
                                 "title":item.title.value,
                                 "time":getTime,
@@ -89,8 +92,8 @@ function getPost(){
 
 //For delete confirmation.
 function getConfirmation(){
-
     let getConf = confirm("Are you sure you want to delete this post ?");
+
     if( getConf == true ){
         return true;
     }else{
@@ -113,15 +116,22 @@ function deletePost(indexNum){
 
 //To edit user's existing post..
 function editPost(indexNum){
-    window.location = "formpage.html";
     let info = JSON.parse(localStorage.getItem("testJSON"));
-    let x = document. getElementById('name'); URLSearchParams
-    x.innerText = (info.blogPost[indexNum].name);
-    document.getElementById('title').innerText= (info.blogPost[indexNum].title);
-    idocument.getElementById('post').innerText = (info.blogPost[indexNum].post);
+
+    let obj = info.blogPost[indexNum];
+    fillText(obj);
 }
 
 
+function fillText(obj){
+    redirect();
+
+    document. getElementById('name').value = obj[name];
+    document.getElementById('title').value = obj[title];
+    idocument.getElementById('post').value = obj[post];
+}
+
+//output notice for the unavailable pages.
 function notice(){
     document.write('This page is still under contruction, kindly click on <a href="home.html">home</a> to go back to previous page..');
 }
